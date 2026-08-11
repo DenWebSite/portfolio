@@ -1,0 +1,104 @@
+@use 'media';
+
+.none {
+	display: none !important;
+}
+
+.visually-hidden {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	margin: -1px;
+	border: 0;
+	padding: 0;
+	white-space: nowrap;
+	clip-path: inset(100%);
+	clip: rect(0 0 0 0);
+	overflow: hidden;
+}
+
+.no-scroll {
+	overflow-y: hidden;
+}
+
+.title {
+	font-size: 48px;
+	line-height: 56px;
+	font-weight: 600;
+
+	@include media.mobile {
+		font-size: 36px;
+		line-height: 42px;
+	}
+
+	@include media.mobile-s {
+		font-size: 32px;
+		line-height: 38px;
+	}
+}
+
+.btn {
+	background-color: var(--color-btn-black);
+	color: var(--color-light);
+	border: 1px solid var(--color-btn-black);
+	display: block;
+	text-align: center;
+	line-height: 38px;
+	width: 168px;
+	height: 48px;
+	padding: 5px;
+	overflow: hidden;
+	border-radius: var(--br-medium);
+	transition: all .3s;
+	corner-shape: squircle;
+
+	@include media.hover {
+		background-color: var(--color-light);
+		color: var(--color-btn-black);
+		transform: translateY(-3px);
+	}
+}
+
+.btn-alt {
+	background-color: var(--color-light);
+	color: var(--color-btn-black);
+	border: 1px solid var(--color-light);
+	display: block;
+	text-align: center;
+	line-height: 38px;
+	width: 168px;
+	height: 48px;
+	padding: 5px;
+	border-radius: var(--br-medium);
+	transition: all .3s;
+    corner-shape: squircle;
+
+	@include media.hover {
+		border: 1px solid var(--color-btn-black);
+		background-color: var(--color-btn-black);
+		color: var(--color-light);
+		transform: translateY(-3px);
+	}
+}
+
+.section {
+	padding-top: 65px;
+	padding-bottom: 65px;
+
+	@include media.mobile-s {
+		padding-top: 50px;
+		padding-bottom: 50px;
+	}
+}
+
+.sticky {
+	position: fixed;
+	top: 0;
+	width: 100%
+}
+
+.navbar-active {
+	display: flex !important;
+	transform: translateX(0) !important;
+	transition: all .3s;
+}

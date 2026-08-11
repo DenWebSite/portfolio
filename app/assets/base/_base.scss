@@ -1,0 +1,14 @@
+@use 'media';
+
+html {
+	scroll-behavior: smooth;
+	scroll-padding-top: 40px;
+}
+
+body {
+	font-family: "Geist", sans-serif;
+	color: var(--color-light);
+	background-color: #10140f;
+	font-size: 16px;
+	line-height: 1.55;
+}

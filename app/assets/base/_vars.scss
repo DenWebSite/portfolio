@@ -1,0 +1,25 @@
+@use 'media';
+
+:root {
+	--container-width: 1200px;
+	--container-padding: 10px;
+
+	--font-main: ;
+	--font-accent: ;
+
+	--color-white: #ffffff;
+	--color-black: #000000;
+	--color-light: #f2f5f1;
+	--color-dim: #9aa89e;
+
+	--color-accent: #63c795;
+	--color-accent-dark: #1e3e29;
+
+	--hover-time: .2s;
+
+	--br-biggest: 50%;
+	--br-xl: 28px;
+	--br-l: 14px;
+	--br-m: 10px;
+	--br-s: 4px;
+}
