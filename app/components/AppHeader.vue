@@ -55,8 +55,8 @@
     font-weight: 500;
 
     span {
-        background-color: #171c16;
-        border: 1px solid #232c22;
+        background-color: var(--color-bg-elem);
+        border: 1px solid var(--br-color);
         padding: 4px 8px;
         border-radius: var(--br-l);
         color: var(--color-accent);
@@ -72,8 +72,8 @@
 }
 
 .search {
-    border: 1px solid #232c22;
-    background: #171c16;
+    border: 1px solid var(--br-color);
+    background: var(--color-bg-elem);
     color: var(--color-dim);
     cursor: pointer;
     padding: 8px 14px;
