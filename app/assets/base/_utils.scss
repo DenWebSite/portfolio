@@ -5,20 +5,45 @@
 }
 
 .title {
-	font-size: 32px;
-	line-height: 40px;
+	font-size: 28px;
+	line-height: 44px;
 	font-weight: 600;
 	margin-bottom: 18px;
+	max-width: 520px;
 
 	@include media.mobile {
-		font-size: 36px;
-		line-height: 42px;
+		font-size: 22px;
+		line-height: 30px;
 	}
+}
+
+.subtitle {
+	max-width: 460px;
+	color: var(--color-dim);
+	margin-bottom: 20px;
 
 	@include media.mobile-s {
-		font-size: 32px;
-		line-height: 38px;
+		font-size: 14px;
+		margin-bottom: 14px;
 	}
+}
+
+.intro {
+	text-transform: uppercase;
+	color: var(--color-accent);
+	font-size: 12px;
+	margin-bottom: 18px;
+
+	span {
+		display: inline-block;
+		width: 2px;
+		height: 2px;
+		background-color: var(--color-accent);
+		border-radius: var(--br-biggest);
+		margin-inline: 6px;
+		margin-bottom: 3px;
+	}
+
 }
 
 .btn {
@@ -62,12 +87,16 @@
 
 
 .section {
-	padding-top: 65px;
-	padding-bottom: 65px;
+	padding-top: 90px;
+	padding-bottom: 90px;
+
+	@include media.mobile {
+		padding-top: 75px;
+		padding-bottom: 75px;
+	}
 
 	@include media.mobile-s {
-		padding-top: 50px;
-		padding-bottom: 50px;
+	
 	}
 }
 

@@ -7,20 +7,19 @@
         <div class="container">
             <div class="hero__inner">
                 <div class="hero__info">
-                    <p class="hero__descr">Frontend Developer <span></span>VUE 3 / NUXT</p>
+                    <p class="hero__descr intro">Frontend Developer <span></span>VUE 3 / NUXT</p>
                     <h1 class="hero__title">Собираю интерфейсы, которые <span>реагируют</span> раньше, чем вы кликнете.
                     </h1>
-                    <p class="hero__subtitle">
+                    <p class="hero__subtitle subtitle">
                         Разрабатываю быстрые, доступные и хорошо типизированные продукты на Vue 3 и Nuxt — от лендингов
                         до SSR-платформ с реалтайм-данными.
                     </p>
 
                     <div class="hero__buttons">
-                        <a class="btn" href="/">Смотреть проекты</a>
+                        <a class="btn" href="/">Мои проекты</a>
                         <a class="btn-transparent" href="/">Связятся</a>
                     </div>
                 </div>
-
 
                 <div class="hero__components">
 
@@ -79,26 +78,21 @@
         align-items: center;
         gap: 40px;
         justify-content: space-between;
+
+        @include mobile {
+            flex-direction: column;
+        }
     }
 
     &__info {
         max-width: 600px;
-    }
+        display: flex;
+        flex-direction: column;
+        justify-content: start;
 
-    &__descr {
-        text-transform: uppercase;
-        color: var(--color-accent);
-        font-size: 12px;
-        margin-bottom: 18px;
-
-        span {
-            display: inline-block;
-            width: 2px;
-            height: 2px;
-            background-color: var(--color-accent);
-            border-radius: var(--br-biggest);
-            margin-inline: 6px;
-            margin-bottom: 3px;
+        @include mobile {
+            align-items: center;
+            text-align: center;
         }
     }
 
@@ -108,30 +102,43 @@
         font-weight: 700;
         margin-bottom: 20px;
 
+        @include mobile {
+            font-size: 38px;
+            line-height: 38px;
+        }
+
+        @include mobile-s {
+            font-size: 30px;
+            line-height: 30px;
+        }
+
         span {
             color: var(--color-accent)
         }
+
     }
 
-    &__subtitle {
-        max-width: 460px;
-        color: var(--color-dim);
-        margin-bottom: 20px;
-    }
-
-    &__buttons{
+    &__buttons {
         display: flex;
         align-items: center;
         gap: 20px;
+
+        @include mobile {
+            justify-content: center;
+        }
     }
 
     &__components {
         max-width: 440px;
+        min-width: 360px;
         width: 100%;
-        flex-shrink: 0;
         background-color: var(--color-bg-elem);
         border-radius: var(--br-xl);
         border: 1px solid var(--br-color);
+
+        @include mobile {
+            min-width: 310px;
+        }
     }
 }
 
@@ -144,6 +151,10 @@
         align-items: center;
         background-color: #1b211a;
         border-radius: var(--br-xl) var(--br-xl) 0 0;
+
+        @include mobile {
+            font-size: 10px;
+        }
 
         &-title {
             color: var(--color-dim);
@@ -164,12 +175,20 @@
         font-size: 12px;
         border-radius: 0 0 var(--br-xl) var(--br-xl);
         padding: 14px 28px;
+
+        @include mobile {
+            font-size: 10px;
+        }
     }
 
     &__list {
         border-top: 1px solid var(--br-color);
         border-bottom: 1px solid var(--br-color);
         padding: 18px;
+
+        @include mobile {
+            padding: 12px
+        }
 
         &-item {
             font-size: 14px;
@@ -185,15 +204,15 @@
                 background-color: rgba(99, 199, 149, 0.12);
                 border-radius: var(--br-s);
 
-                p::after{
+                p::after {
                     background-color: var(--color-accent);
                 }
             }
 
-            p{
+            p {
                 position: relative;
 
-                &::after{
+                &::after {
                     content: '';
                     position: absolute;
                     display: inline-block;
