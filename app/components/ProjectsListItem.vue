@@ -1,0 +1,87 @@
+<script setup lang="ts">
+
+interface Project {
+    id: number,
+    intro: string,
+    title: string,
+    descr: string,
+    stack: string[],
+    link: string,
+}
+
+const props = defineProps<{
+    item: Project,
+}>()
+
+</script>
+
+<template>
+    <li class="projects__list-item">
+        <p class="intro">{{ item.intro }}</p>
+        <h3 class="title">{{item.title}}</h3>
+        <p class="subtitle">{{item.descr}}</p>
+
+        <ul class="stack__list">
+            <li v-for="i in item.stack" class="stack__list-item">{{ i }}</li>
+        </ul>
+
+        <NuxtLink :to=item.link class="link">Смотреть проект →</NuxtLink>
+    </li>
+</template>
+
+<style lang="scss" scoped>
+.intro,
+.title,
+.subtitle {
+    margin-bottom: 0;
+    max-width: unset;
+}
+
+.intro {
+    text-transform: none;
+    font-size: 12px;
+    color: var(--color-accent);
+}
+
+.title {
+    font-size: 18px;
+}
+
+.stack__list {
+
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 7px;
+
+    &-item {
+        font-size: 12px;
+        padding: 5px 10px;
+        border-radius: var(--br-xl);
+        background-color: var(--color-bg-elem);
+        color: var(--color-dim);
+        border: 1px solid var(--br-color);
+    }
+}
+
+.link {
+    color: var(--color-accent)
+}
+
+.projects__list-item {
+    flex-grow: 1;
+    border: 1px solid var(--br-color);
+    border-radius: var(--br-xl);
+    background-color: #1b211a;
+    padding: 26px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    max-width: 380px;
+
+    @include tablet {
+        max-width: unset;
+        width: 100%;
+    }
+}
+</style>

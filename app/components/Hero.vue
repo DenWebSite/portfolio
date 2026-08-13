@@ -8,7 +8,7 @@
             <div class="hero__inner">
                 <div class="hero__info">
                     <p class="hero__descr intro">Frontend Developer <span></span>VUE 3 / NUXT</p>
-                    <h1 class="hero__title">Собираю интерфейсы, которые <span>реагируют</span> раньше, чем вы кликнете.
+                    <h1 class="hero__title">Не просто верстаю сайт, а привожу его в движение
                     </h1>
                     <p class="hero__subtitle subtitle">
                         Разрабатываю быстрые, доступные и хорошо типизированные продукты на Vue 3 и Nuxt — от лендингов
@@ -98,18 +98,18 @@
 
     &__title {
         font-size: 48px;
-        line-height: 48px;
+        line-height: 54px;
         font-weight: 700;
         margin-bottom: 20px;
 
         @include mobile {
             font-size: 38px;
-            line-height: 38px;
+            line-height: 48px;
         }
 
         @include mobile-s {
             font-size: 30px;
-            line-height: 30px;
+            line-height: 40px;
         }
 
         span {

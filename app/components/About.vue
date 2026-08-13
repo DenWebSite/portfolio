@@ -24,9 +24,9 @@ const qualityItems = ['Vitest', 'ESLint']
                         Стек и инструменты
                     </h3>
 
-                    <AboutStackList title="Core" :stack-items="coreItems"></AboutStackList>
-                    <AboutStackList title="Инструменты" :stack-items="toolsItems"></AboutStackList>
-                    <AboutStackList title="Качество" :stack-items="qualityItems"></AboutStackList>
+                    <AboutStackListItem title="Core" :stack-items="coreItems"></AboutStackListItem>
+                    <AboutStackListItem title="Инструменты" :stack-items="toolsItems"></AboutStackListItem>
+                    <AboutStackListItem title="Качество" :stack-items="qualityItems"></AboutStackListItem>
                 </div>
             </div>
         </div>
@@ -50,7 +50,6 @@ const qualityItems = ['Vitest', 'ESLint']
     }
 
     &__stack {
-        max-width: 600px;
         padding: 28px;
         border-radius: var(--br-xl);
         background-color: var(--color-bg-elem);
