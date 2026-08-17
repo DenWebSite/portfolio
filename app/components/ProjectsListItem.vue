@@ -18,8 +18,8 @@ const props = defineProps<{
 <template>
     <li class="projects__list-item">
         <p class="intro">{{ item.intro }}</p>
-        <h3 class="title">{{item.title}}</h3>
-        <p class="subtitle">{{item.descr}}</p>
+        <h3 class="title">{{ item.title }}</h3>
+        <p class="subtitle">{{ item.descr }}</p>
 
         <ul class="stack__list">
             <li v-for="i in item.stack" class="stack__list-item">{{ i }}</li>
@@ -45,6 +45,11 @@ const props = defineProps<{
 
 .title {
     font-size: 18px;
+
+
+    @include mobile-s {
+        font-size: 16px;
+    }
 }
 
 .stack__list {
@@ -65,7 +70,11 @@ const props = defineProps<{
 }
 
 .link {
-    color: var(--color-accent)
+    color: var(--color-accent);
+
+    @include mobile-s {
+        font-size: 14px;
+    }
 }
 
 .projects__list-item {
@@ -82,6 +91,10 @@ const props = defineProps<{
     @include tablet {
         max-width: unset;
         width: 100%;
+    }
+
+    @include mobile-s{
+        padding: 20px 18px;
     }
 }
 </style>

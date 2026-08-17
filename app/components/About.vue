@@ -60,6 +60,11 @@ const qualityItems = ['Vitest', 'ESLint']
             text-align: center;
             color: var(--color-dim);
             margin-bottom: 20px;
+            text-transform: uppercase;
+
+            @include mobile-s {
+                font-size: 14px;
+            }
         }
     }
 }

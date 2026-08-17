@@ -7,7 +7,7 @@
     <About></About>
     <Projects></Projects>
     <Path></Path>
-    <Contact></Contact>
+    <Form></Form>
 </template>
 
 <style lang="scss" scoped>

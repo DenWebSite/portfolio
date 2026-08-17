@@ -34,6 +34,11 @@
 	font-size: 12px;
 	margin-bottom: 18px;
 
+
+	@include media.mobile-s {
+		margin-bottom: 8px;
+	}
+
 	span {
 		display: inline-block;
 		width: 2px;
@@ -95,9 +100,7 @@
 		padding-bottom: 75px;
 	}
 
-	@include media.mobile-s {
-	
-	}
+	@include media.mobile-s {}
 }
 
 .navbar-active {

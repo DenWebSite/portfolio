@@ -26,10 +26,9 @@ const props = defineProps<{
 </template>
 
 <style lang="scss" scoped>
+.path__timeline {
 
-.path__timeline{
-
-    &-item{
+    &-item {
         max-width: 600px;
         display: flex;
         flex-direction: column;
@@ -37,7 +36,7 @@ const props = defineProps<{
 
         position: relative;
 
-        &::before{
+        &::before {
             content: '';
             position: absolute;
             left: -36px;
@@ -48,29 +47,38 @@ const props = defineProps<{
             border-radius: var(--br-biggest);
         }
 
-        &+&{
+        &+& {
             margin-top: 40px;
         }
     }
 
-    &-year{
+    &-year {
         color: var(--color-dim);
-        font-size: 12px;
+        font-size: 11px;
     }
 
-    &-title{
+    &-title {
         font-size: 18px;
         font-weight: 700;
         color: var(--color-light);
+
+        @include mobile-s {
+            font-size: 16px;
+        }
     }
 
-    &-company{
+    &-company {
         color: var(--color-accent);
 
-        span{
+
+        @include mobile-s {
+            font-size: 14px;
+        }
+
+        span {
             display: inline-block;
             width: 4px;
-            height:4px;
+            height: 4px;
             background-color: var(--color-accent);
             border-radius: var(--br-biggest);
             margin-inline: 6px;
@@ -78,9 +86,12 @@ const props = defineProps<{
         }
     }
 
-    &-descr{
-        color: var(--color-dim)
+    &-descr {
+        color: var(--color-dim);
+
+        @include mobile-s {
+            font-size: 14px;
+        }
     }
 }
-
 </style>
