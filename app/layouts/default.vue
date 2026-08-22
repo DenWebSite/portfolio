@@ -4,6 +4,7 @@
 
 <template>
     <AppHeader></AppHeader>
+    <CustomCursor />
 
     <main class="main-content">
         <slot></slot>
@@ -12,4 +13,6 @@
     <AppFooter></AppFooter>
 </template>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+
+</style>

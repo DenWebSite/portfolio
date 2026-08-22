@@ -1,5 +1,9 @@
 @use 'media';
 
+* {
+	cursor: none !important;
+}
+
 html {
 	scroll-behavior: smooth;
 	scroll-padding-top: 40px;
@@ -14,10 +18,10 @@ body {
 }
 
 body::before {
-    content: "";
-    position: fixed;
-    inset: 0;
-    pointer-events: none;
-    background-image: radial-gradient(circle at 12% 0%, rgba(30, 62, 41, 0.30), transparent 42%), radial-gradient(circle at 90% 8%, rgba(99, 199, 149, 0.06), transparent 38%);
-    z-index: 0;
+	content: "";
+	position: fixed;
+	inset: 0;
+	pointer-events: none;
+	background-image: radial-gradient(circle at 12% 0%, rgba(30, 62, 41, 0.30), transparent 42%), radial-gradient(circle at 90% 8%, rgba(99, 199, 149, 0.06), transparent 38%);
+	z-index: 0;
 }

@@ -36,32 +36,30 @@
                             </li>
                             <li class="comp__list-item">
                                 <p>
-                                    &lt;Exprerience /&gt;
+                                    &lt;AboutMe /&gt;
                                 </p>
                             </li>
                             <li class="comp__list-item">
                                 <p>
-                                    &lt;CtaGroups :buttons/&gt;
+                                    &lt;ProjectsList /&gt;
                                 </p>
                             </li>
                             <li class="comp__list-item">
                                 <p>
-                                    &lt;ButtonPrimary /&gt;
+                                    &lt;ProjectsListItem /&gt;
                                 </p>
                             </li>
                             <li class="comp__list-item">
                                 <p>
-                                    &lt;ButtonGhost /&gt;
+                                    &lt;ProjectsListItem /&gt;
                                 </p>
                             </li>
                             <li class="comp__list-item">
                                 <p>
-                                    &lt;ScrollHint /&gt;
+                                    &lt;Contact&gt;
                                 </p>
                             </li>
                         </ul>
-
-                        <div class="comp__footer">Весь сайт устроен так же - включите режим Inspect</div>
                     </div>
 
                 </div>
@@ -167,17 +165,6 @@
             margin-right: 6px;
             background-color: var(--br-color);
             border-radius: var(--br-biggest);
-        }
-    }
-
-    &__footer {
-        color: var(--color-dim);
-        font-size: 12px;
-        border-radius: 0 0 var(--br-xl) var(--br-xl);
-        padding: 14px 28px;
-
-        @include mobile {
-            font-size: 10px;
         }
     }
 

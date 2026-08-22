@@ -11,11 +11,13 @@ const emit = defineEmits<{
 
 const isOpen = ref(props.isOpen);
 const searchQuery = ref('');
+const scrollbarWidth = ref(0);
 
 const menuItems = [
     { label: 'Перейти: Главная', link: '/' },
     { label: 'Перейти: Все проекты', link: '/cases' },
     { label: 'Открыть GitHub', link: 'https://github.com/DenWebSite' },
+    { label: 'Открыть CV', link: 'https://github.com/DenWebSite' },
     { label: 'Перейти: Обо мне', link: { path: '/', hash: '#aboout' } },
     { label: 'Перейти: Кейсы', link: { path: '/', hash: '#case' } },
     { label: 'Перейти: Опыт', link: { path: '/', hash: '#path' } },
@@ -35,6 +37,10 @@ watch(() => props.isOpen, (newValue) => {
     isOpen.value = newValue;
     if (newValue) {
         searchQuery.value = '';
+        toggleScroll(true);
+    }
+    else {
+        toggleScroll(false);
     }
 });
 
@@ -45,7 +51,13 @@ const closeModal = () => {
 };
 
 const toggleScroll = (lock: boolean) => {
-    document.body.style.overflow = lock ? 'hidden' : '';
+    if (lock) {
+        document.body.style.overflow = 'hidden';
+        document.body.style.paddingRight = scrollbarWidth.value + 'px';
+    } else {
+        document.body.style.overflow = '';
+        document.body.style.paddingRight = '';
+    }
 };
 
 const handleKeydown = (event: KeyboardEvent) => {
@@ -55,6 +67,7 @@ const handleKeydown = (event: KeyboardEvent) => {
 };
 
 onMounted(() => {
+    scrollbarWidth.value = window.innerWidth - document.documentElement.clientWidth;
     window.addEventListener('keydown', handleKeydown);
     if (isOpen.value) toggleScroll(true);
 });
