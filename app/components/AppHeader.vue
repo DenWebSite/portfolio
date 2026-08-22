@@ -1,38 +1,26 @@
 <script setup lang="ts">
-
+const isSearchOpen = ref(false);
 </script>
 
 <template>
     <header class="header">
         <div class="container">
             <div class="header__inner">
-                <h2 class="name">Мельник <span>Денис</span></h2>
-
-                <!-- <nav class="nav">
-                    <ul class="nav__list">
-                        <li class="nav__list-item">
-                            <NuxtLink to="/">Стек</NuxtLink>
-                        </li>
-                        <li class="nav__list-item">
-                            <NuxtLink to="/">Проекты</NuxtLink>
-                        </li>
-                        <li class="nav__list-item">
-                            <NuxtLink to="/">Опыт</NuxtLink>
-                        </li>
-                        <li class="nav__list-item">
-                            <NuxtLink to="/">Контакты</NuxtLink>
-                        </li>
-                    </ul>
-                </nav> -->
+                <h2 class="name">
+                    <NuxtLink to="/"> Мельник <span>Денис</span></NuxtLink>
+                </h2>
 
                 <div class="buttons">
-                    <button class="search">Быстрый поиск <span></span></button>
-
+                    <button class="search" @click="isSearchOpen = true">Быстрый поиск <span></span></button>
+                    
+                    
                     <button class="inspect"><span class="inspect__dot"></span> Inspect</button>
                 </div>
+
             </div>
         </div>
     </header>
+    <Search v-model:isOpen="isSearchOpen" />
 </template>
 
 <style lang="scss" scoped>

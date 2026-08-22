@@ -20,7 +20,7 @@ const timeline = [
 </script>
 
 <template>
-    <section class="section path">
+    <section class="section path" id="path">
         <div class="container">
             <div class="path__inner">
                 <div class="path__info">

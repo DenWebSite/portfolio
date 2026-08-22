@@ -4,7 +4,7 @@
 
 <template>
 
-    <section class="section form">
+    <section class="section form" id="form">
         <div class="container">
             <div class="form__inner">
                 <div class="form__socials">

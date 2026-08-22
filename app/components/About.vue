@@ -7,7 +7,7 @@ const qualityItems = ['Vitest', 'ESLint']
 </script>
 
 <template>
-    <section class="section about">
+    <section class="section about" id="about">
         <div class="container">
             <div class="about__inner">
                 <div class="about__info">

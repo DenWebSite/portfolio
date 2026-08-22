@@ -1,7 +1,7 @@
 <script setup lang="ts">
 
 const props = defineProps<{
-    title: string,
+    title?: string,
     stackItems: string[],
 }>()
 
@@ -9,7 +9,7 @@ const props = defineProps<{
 
 <template>
     <div>
-        <h4>{{ title }}</h4>
+        <h4 v-show="title">{{ title }}</h4>
         <ul class="about__stack__list">
             <li v-for="item in stackItems" class="about__stack__list-item">{{ item }}</li>
         </ul>
@@ -18,7 +18,7 @@ const props = defineProps<{
 
 <style lang="scss" scoped>
 div {
-    
+
     &+& {
         margin-top: 30px;
     }
@@ -46,7 +46,7 @@ h4 {
         border-radius: var(--br-xl);
         border: 1px solid var(--br-color);
 
-        @include mobile-s{
+        @include mobile-s {
             font-size: 12px;
         }
     }
