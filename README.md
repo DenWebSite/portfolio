@@ -22,3 +22,68 @@
 
 * https://denwebsite.vercel.app/ - главная страница;
 * https://denwebsite.vercel.app/cases - страница с проектами.
+
+## Технологии: 
+
+![Vue.js](https://img.shields.io/badge/vue.js-%2335495e.svg?style=for-the-badge&logo=vuedotjs&logoColor=%234FC08D) ![Nuxt JS](https://img.shields.io/badge/Nuxt-002E3B?style=for-the-badge&logo=nuxt.js&logoColor=#00DC82) ![TypeScript](https://img.shields.io/badge/typescript-%23007ACC.svg?style=for-the-badge&logo=typescript&logoColor=white) ![SASS](https://img.shields.io/badge/SASS-hotpink.svg?style=for-the-badge&logo=SASS&logoColor=white) 
+
+## Установка и запуск
+
+Требования: 
+* установлен node.js
+* установлен npm
+
+1. Клонируйте репу
+```
+git clone https://github.com/DenWebSite/portfolio.git
+```
+
+2. Откройте папку с проектом и установите зависимости
+```
+npm i
+```
+
+3. Добавьте .env файл
+```
+NUXT_PUBLIC_API_BASE=ваши данные для подключения к бд
+```
+
+4. Пробуйте запустить!
+```
+npm run dev
+```
+
+## Структура проекта
+
+portfolio-frontend/
+├── app/                          # Основной код приложения
+│   ├── assets/               
+│   │   ├── base/                 # Базовые стили
+│   │   │   ├── _base.scss        # Глобальные стили (body, html)
+│   │   │   ├── _containers.scss  # Стили контейнера
+│   │   │   ├── _fonts.scss       # Подключение шрифтов
+│   │   │   ├── _layout.scss      # Стили для лейаута
+│   │   │   ├── _media.scss       # Медиа-запросы, ховеры
+│   │   │   ├── _reset.scss       # Сброс стилей
+│   │   │   ├── _utils.scss       # Вспомогательные классы
+│   │   │   └── _vars.scss        # CSS(!)-переменные
+│   │   ├── fonts/                # Шрифты проекта
+│   │   └── main.scss             # Главный SCSS-файл
+│   ├── components/               # Vue компоненты
+│   ├── layouts/                  # Лейауты
+│   │   └── default.vue           # Дефолтный лейаут
+│   ├── pages/                    # 
+│   │   └── index.vue             # Главная страница
+│   │   └── cases.vue             # Cтраница с проектами
+│   └── app.vue                   # Корневой компонент Vue
+├── public/                       # Статические файлы, публичные
+├── .env                          # Переменные окружения
+├── .gitignore                    # Игнорируемые файлы для Git
+├── .nuxt/                        # Служебная папка Nuxt (автогенерируемая)
+├── .vercel/                      # Настройки деплоя на Vercel
+├── node_modules/                 # Зависимости npm
+├── nuxt.config.ts                # Конфигурация Nuxt
+├── package-lock.json             # 
+├── package.json                  # Список зависимостей
+├── README.md                     # Документация
+└── tsconfig.json                 # Настройки ts
