@@ -94,7 +94,7 @@ const submitForm = async () => {
                             rows="5" required></textarea>
                     </div>
 
-                    <button class="btn" type="submit" :disabled="isLoading">Отправить заявку</button>
+                    <button class="btn" type="submit" :disabled="isLoading">{{ isLoading ? "Отправляю..." : "Отправить заявку" }}</button>
                 </form>
 
                 <FormModal v-model="isModalOpen" :title="modalTitle" :message="modalMessage" :type="modalType"
