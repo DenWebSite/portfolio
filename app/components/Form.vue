@@ -42,7 +42,7 @@ const submitForm = async () => {
     isLoading.value = true;
 
     try {
-        const response = await $fetch(`${config.public.apiBase}/api/contact`, {
+        const response = await $fetch(`${config.public.apiBase}/contact`, {
             method: 'POST',
             body: {
                 name: form.name,
