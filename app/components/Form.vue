@@ -1,4 +1,70 @@
-<script setup lang="ts">
+<script setup>
+const config = useRuntimeConfig();
+
+const form = reactive({
+    name: '',
+    email: '',
+    message: '',
+})
+
+const isModalOpen = ref(false);
+const modalTitle = ref('');
+const modalMessage = ref('');
+const modalType = ref('success')
+const isLoading = ref(false);
+
+const openModal = (type, title, message) => {
+    modalType.value = type;
+    modalTitle.value = title;
+    modalMessage.value = message;
+    isModalOpen.value = true;
+}
+
+const isValidEmail = (email) => {
+    return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+}
+
+const isFormValueFull = (form) => {
+    return form.name.trim() && form.email.trim() && form.message.trim();
+}
+
+const submitForm = async () => {
+    if (!isFormValueFull(form)) {
+        openModal('error', 'Ошибка', 'Пожалуйста, заполните все поля');
+        return;
+    }
+
+    if (!isValidEmail(form.email)) {
+        openModal('error', 'Ошибка', 'Введите корректный email')
+        return
+    }
+
+    isLoading.value = true;
+
+    try {
+        const response = await $fetch(`${config.public.apiBase}/api/contact`, {
+            method: 'POST',
+            body: {
+                name: form.name,
+                email: form.email,
+                message: form.message
+            }
+        })
+
+        openModal('success', 'Успешно!', 'Ваше сообщение отправлено!')
+
+        form.name = '';
+        form.email = '';
+        form.message = '';
+    }
+    catch (error) {
+        openModal('error', 'Ошибка', 'Произошла ошибка. Попробуйте позже.')
+    }
+    finally {
+        isLoading.value = false;
+    }
+}
+
 
 </script>
 
@@ -7,48 +73,32 @@
     <section class="section form" id="form">
         <div class="container">
             <div class="form__inner">
-                <div class="form__socials">
-                    <h2 class="form__socials-title"><span></span>Открыт для предложений</h2>
+                <Socials />
 
-                    <ul class="form__socials__list">
-                        <li class="form__socials__list-item">
-                            <a href="/" target="_blank">risskon111@gmail.com</a>
-                            <p>Email</p>
-                        </li>
-                        <li class="form__socials__list-item">
-                            <a href="/" target="_blank">@dsedulya</a>
-                            <p>Telegram</p>
-                        </li>
-                        <li class="form__socials__list-item">
-                            <a href="/" target="_blank">vk.com/dsedulya</a>
-                            <p>VK</p>
-                        </li>
-                        <li class="form__socials__list-item">
-                            <a href="https://github.com/DenWebSite" target="_blank">github.com/DenWebSite</a>
-                            <p>Github</p>
-                        </li>
-                    </ul>
-                </div>
-
-                <form class="form__contact">
+                <form class="form__contact" @submit.prevent="submitForm">
                     <div class="form__contact-group">
                         <label for="name" class="form__contact-label">Имя</label>
-                        <input class="form__contact-input" name="name" id="name" type="text" placeholder="" required>
+                        <input v-model="form.name" class="form__contact-input" name="name" id="name" type="text"
+                            placeholder="" required>
                     </div>
 
                     <div class="form__contact-group">
                         <label for="email" class="form__contact-label">Email</label>
-                        <input class="form__contact-input" name="email" id="email" type="text" placeholder="" required>
+                        <input v-model="form.email" class="form__contact-input" name="email" id="email" type="text"
+                            placeholder="" required>
                     </div>
 
                     <div class="form__contact-group">
                         <label for="message" class="form__contact-label">Сообщение</label>
-                        <textarea class="form__contact-textarea" name="message" id="message" rows="5"
-                            required></textarea>
+                        <textarea v-model="form.message" class="form__contact-textarea" name="message" id="message"
+                            rows="5" required></textarea>
                     </div>
 
-                    <button class="btn">Отправить заявку</button>
+                    <button class="btn" type="submit" :disabled="isLoading">Отправить заявку</button>
                 </form>
+
+                <FormModal v-model="isModalOpen" :title="modalTitle" :message="modalMessage" :type="modalType"
+                    @close="modalType = 'success'" />
             </div>
         </div>
     </section>
@@ -67,74 +117,6 @@
         @include mobile {
             flex-direction: column;
             align-items: center;
-        }
-    }
-
-    &__socials {
-        max-width: 530px;
-        width: 100%;
-
-        &-title {
-            color: var(--color-accent);
-            padding: 7px 14px;
-            background-color: var(--color-bg-elem);
-            border-radius: var(--br-xl);
-            border: 1px solid var(--color-accent-dark);
-            display: inline-block;
-            font-weight: 500;
-            font-size: 16px;
-            margin-bottom: 10px;
-
-            @include mobile-s {
-                font-size: 14px;
-            }
-
-            span {
-                display: inline-block;
-                width: 6px;
-                height: 6px;
-                background-color: var(--color-accent);
-                border-radius: var(--br-biggest);
-                margin-right: 8px;
-                margin-bottom: 2px;
-            }
-        }
-
-        &__list {
-
-            &-item {
-                border-bottom: 1px solid var(--br-color);
-                display: flex;
-                align-items: center;
-                justify-content: space-between;
-                gap: 20px;
-                padding-right: 4px;
-                transition: all var(--hover-time);
-
-                @include mobile-s {
-                    font-size: 14px;
-                }
-
-
-                &:has(a:hover) {
-                    border-color: var(--color-accent-dark);
-                    transform: translateX(5px);
-                }
-
-                a {
-                    padding: 16px 0px 16px 4px;
-                    width: 100%;
-                    transition: all var(--hover-time);
-
-                    @include hover {
-                        color: var(--color-accent);
-                    }
-                }
-
-                p {
-                    color: var(--color-dim);
-                }
-            }
         }
     }
 

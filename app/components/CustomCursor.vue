@@ -7,14 +7,12 @@ const moveCursor = (e: MouseEvent) => {
     cursor.value.style.transform = `translate(${e.clientX - 16}px, ${e.clientY - 16}px)`;
 };
 
-// Эффект при наведении на ссылки/кнопки
 const handleHoverIn = () => { isHovering.value = true; };
 const handleHoverOut = () => { isHovering.value = false; };
 
 onMounted(() => {
     document.addEventListener('mousemove', moveCursor);
 
-    // Добавляем эффекты на интерактивные элементы
     document.querySelectorAll('a, button, input, .interactive').forEach((el) => {
         el.addEventListener('mouseenter', handleHoverIn);
         el.addEventListener('mouseleave', handleHoverOut);
@@ -102,14 +100,6 @@ onBeforeUnmount(() => {
     border-radius: 50%;
     transform: translate(-50%, -50%);
     transition: width 0.2s, height 0.2s;
-}
-
-.ring {
-    position: absolute;
-    inset: 0;
-    border: 1.5px solid rgba(99, 199, 149, 0.4);
-    border-radius: 50%;
-    transition: all 0.2s;
 }
 
 .custom-cursor.hover {

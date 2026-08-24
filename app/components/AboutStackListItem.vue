@@ -37,6 +37,7 @@ h4 {
     flex-wrap: wrap;
     gap: 10px;
     max-width: 450px;
+    width: 100%;
 
     &-item {
         font-size: 14px;

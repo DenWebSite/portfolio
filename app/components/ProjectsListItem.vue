@@ -71,6 +71,14 @@ const props = defineProps<{
 
 .link {
     color: var(--color-accent);
+    padding-bottom: 2px;
+    transition: all var(--hover-time);
+    border-bottom: 1px solid transparent;
+    width: fit-content;
+
+    @include hover {
+        border-bottom: 1px solid var(--color-accent);
+    }
 
     @include mobile-s {
         font-size: 14px;
@@ -87,13 +95,18 @@ const props = defineProps<{
     flex-direction: column;
     gap: 14px;
     max-width: 380px;
+    transition: all var(--hover-time);
+
+    @include hover {
+        transform: translateY(-5px);
+    }
 
     @include tablet {
         max-width: unset;
         width: 100%;
     }
 
-    @include mobile-s{
+    @include mobile-s {
         padding: 20px 18px;
     }
 }

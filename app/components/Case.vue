@@ -26,18 +26,26 @@ const stack = ['VUE 3', 'NUXT 4', 'TypeScript', 'Node.js', 'Express.js']
             <AboutStackListItem :stack-items="stack"></AboutStackListItem>
             <a class="case__stack-link" href="/">Смотреть проект</a>
         </div>
-
     </div>
 
 </template>
 
 <style lang="scss" scoped>
 .case {
-    display: flex;
+    // display: flex;
+    display: grid;
     background-color: var(--color-bg-elem);
     border-radius: var(--br-xl);
     margin-bottom: 20px;
     transition: all var(--hover-time) ease-in-out;
+
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: 100px 100px;
+
+    @include mobile-s {
+        grid-template-rows: 80px;
+    }
+
 
     &__intro {
         display: flex;
@@ -59,6 +67,20 @@ const stack = ['VUE 3', 'NUXT 4', 'TypeScript', 'Node.js', 'Express.js']
             top: 50%;
         }
 
+        grid-row: 1 / 3;
+        grid-column: 1 / 1;
+
+        @include mobile-s {
+            flex-direction: row-reverse;
+            align-items: center;
+            grid-column: 1 / 7;
+            grid-row: 1 / 2;
+            max-width: unset;
+
+            &::before {
+                top: 100%
+            }
+        }
     }
 
     &__title {
@@ -89,15 +111,48 @@ const stack = ['VUE 3', 'NUXT 4', 'TypeScript', 'Node.js', 'Express.js']
         color: var(--color-dim);
         font-size: 14px;
         padding: 26px 24px;
-        max-width: 500px;
         border-right: 2px solid var(--br-color);
         border-left: 2px solid var(--br-color);
 
+        grid-row: 1 / 3;
+        grid-column: 2 / 5;
+
+        @include tablet {
+            grid-column: 2 / 4;
+        }
+
+        @include mobile {
+            grid-column: 2 / 7;
+            border-right: none;
+        }
+
+        @include mobile-s {
+            grid-row: 2 / 3;
+            grid-column: 1 / 7;
+            border-left: none;
+        }
     }
 
     &__stack {
         padding: 26px 24px;
         position: relative;
+
+        grid-row: 1 / 3;
+        grid-column: 5 / 7;
+
+        @include tablet {
+            grid-column: 4 / 7;
+        }
+
+        @include mobile {
+            grid-row: 3 / 4;
+            grid-column: 1 / 7;
+            border-top: 2px solid var(--br-color);
+
+            :deep(.about__stack__list) {
+                margin: 0 auto;
+            }
+        }
 
         &::before {
             content: '';
@@ -111,7 +166,7 @@ const stack = ['VUE 3', 'NUXT 4', 'TypeScript', 'Node.js', 'Express.js']
 
         &-link {
             display: block;
-            margin-top: 30px;
+            margin-top: 44px;
             margin-inline: auto;
             font-size: 14px;
             text-align: center;
@@ -120,7 +175,7 @@ const stack = ['VUE 3', 'NUXT 4', 'TypeScript', 'Node.js', 'Express.js']
             padding-bottom: 4px;
             width: fit-content;
 
-            @include hover{
+            @include hover {
                 color: var(--color-accent);
                 border-color: var(--color-accent);
             }
