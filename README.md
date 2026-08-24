@@ -12,8 +12,6 @@
 - [Технологии](#технологии)
 - [Установка и запуск](#установка-и-запуск)
 - [Структура проекта](#структура-проекта)
-- [API интеграция](#api-интеграция)
-- [Деплой](#деплой)
 
 ## Общее
 
@@ -26,32 +24,6 @@
 ## Технологии: 
 
 ![Vue.js](https://img.shields.io/badge/vue.js-%2335495e.svg?style=for-the-badge&logo=vuedotjs&logoColor=%234FC08D) ![Nuxt JS](https://img.shields.io/badge/Nuxt-002E3B?style=for-the-badge&logo=nuxt.js&logoColor=#00DC82) ![TypeScript](https://img.shields.io/badge/typescript-%23007ACC.svg?style=for-the-badge&logo=typescript&logoColor=white) ![SASS](https://img.shields.io/badge/SASS-hotpink.svg?style=for-the-badge&logo=SASS&logoColor=white) 
-
-## Установка и запуск
-
-Требования: 
-* установлен node.js
-* установлен npm
-
-1. Клонируйте репу
-```
-git clone https://github.com/DenWebSite/portfolio.git
-```
-
-2. Откройте папку с проектом и установите зависимости
-```
-npm i
-```
-
-3. Добавьте .env файл
-```
-NUXT_PUBLIC_API_BASE=ваши данные для подключения к бд
-```
-
-4. Пробуйте запустить!
-```
-npm run dev
-```
 
 ## Структура проекта
 ```
@@ -87,4 +59,30 @@ portfolio-frontend/
 ├── package.json                  # Список зависимостей
 ├── README.md                     # Документация
 └── tsconfig.json                 # Настройки ts
+```
+
+## Установка и запуск
+
+Требования: 
+* установлен node.js
+* установлен npm
+
+1. Клонируйте репу
+```
+git clone https://github.com/DenWebSite/portfolio.git
+```
+
+2. Откройте папку с проектом и установите зависимости
+```
+npm i
+```
+
+3. Добавьте .env файл
+```
+NUXT_PUBLIC_API_BASE=ваши данные для подключения к бд
+```
+
+4. Пробуйте запустить!
+```
+npm run dev
 ```
