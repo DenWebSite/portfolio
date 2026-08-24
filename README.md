@@ -54,7 +54,7 @@ npm run dev
 ```
 
 ## Структура проекта
-
+```
 portfolio-frontend/
 ├── app/                          # Основной код приложения
 │   ├── assets/               
@@ -87,3 +87,4 @@ portfolio-frontend/
 ├── package.json                  # Список зависимостей
 ├── README.md                     # Документация
 └── tsconfig.json                 # Настройки ts
+```
