@@ -4,7 +4,7 @@
 
 <template>
     <AppHeader></AppHeader>
-    <CustomCursor />
+    <!-- <CustomCursor /> -->
 
     <main class="main-content">
         <slot></slot>

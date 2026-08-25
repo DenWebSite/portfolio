@@ -1,34 +1,9 @@
 <script setup lang="ts">
+import type { Project } from './../types/projects';
+import projectsData from "./../../public/data/projects.json"
 
-const projectsItems = [
-    {
-        id: 0,
-        intro: 'E-commerce',
-        title: 'Отель ArtHouse',
-        descr: 'Отель отель отель отель',
-        stack: ['Nuxt 4', 'VUE 3', 'SASS', 'Travelline'],
-        link: '/'
-    },
-    {
-        id: 1,
-        intro: 'E-commerce',
-        title: 'Отель ArtHouse',
-        descr: 'Отель отель отель отель',
-        stack: ['Nuxt 4', 'VUE 3', 'SASS', 'Travelline'],
-        link: '/'
-    },
-    {
-        id: 2,
-        intro: 'E-commerce',
-        title: 'Отель ArtHouse',
-        descr: 'Отель отель отель отель',
-        stack: ['Nuxt 4', 'VUE 3', 'SASS', 'Travelline'],
-        link: '/'
-    }
-]
-
-console.log(projectsItems)
-
+const projects = projectsData as Project[];
+const firstThreeProjects = computed(() => projects.slice(0, 3));
 </script>
 
 <template>
@@ -44,7 +19,8 @@ console.log(projectsItems)
                 </div>
 
                 <ul class="projects__list">
-                    <ProjectsListItem v-for="item in projectsItems" :item="item" :key="item.id"></ProjectsListItem>
+                    <ProjectsListItem v-for="project in firstThreeProjects" :project="project" :key="project.id">
+                    </ProjectsListItem>
                 </ul>
             </div>
         </div>
@@ -56,7 +32,7 @@ console.log(projectsItems)
 
     &__list {
         display: flex;
-        align-items: center;
+        align-items: stretch;
         justify-content: space-between;
         gap: 22px;
 
@@ -67,12 +43,12 @@ console.log(projectsItems)
         margin-top: 40px;
     }
 
-    &__link{
+    &__link {
         transition: all var(--hover-time);
         padding-bottom: 2px;
         border-bottom: 1px solid transparent;
 
-        &:hover{
+        &:hover {
             color: var(--color-accent);
             border-color: var(--color-accent);
         }

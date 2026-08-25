@@ -38,7 +38,7 @@ onBeforeUnmount(() => {
 <style scoped>
 .custom-cursor {
     position: fixed;
-    top: 0;
+    top: 24px;
     left: 0;
     width: 22px;
     height: 22px;
@@ -63,7 +63,7 @@ onBeforeUnmount(() => {
     border-top: 2px solid var(--cursor-color);
     position: relative;
     left: 0;
-    top: 0;
+    top: -12px;
 }
 
 .top {
@@ -71,7 +71,7 @@ onBeforeUnmount(() => {
     border-top: 2px solid var(--cursor-color);
     position: absolute;
     right: 0;
-    top: 0;
+    top: -12px;
 }
 
 .right {
@@ -79,7 +79,7 @@ onBeforeUnmount(() => {
     border-bottom: 2px solid var(--cursor-color);
     position: absolute;
     right: 0;
-    bottom: 0;
+    bottom: 12px;
 }
 
 .bottom {
@@ -87,12 +87,12 @@ onBeforeUnmount(() => {
     border-bottom: 2px solid var(--cursor-color);
     position: absolute;
     left: 0;
-    bottom: 0;
+    bottom: 12px;
 }
 
 .dot {
     position: absolute;
-    top: 50%;
+    top: -1px;
     left: 50%;
     width: 6px;
     height: 6px;
@@ -108,8 +108,9 @@ onBeforeUnmount(() => {
 }
 
 .custom-cursor.hover .dot {
-    width: 3px;
-    height: 3px;
+    width: 9px;
+    height: 9px;
+    top: 3px;
     background: #ffffff;
 }
 </style>

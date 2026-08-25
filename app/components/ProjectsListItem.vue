@@ -1,31 +1,28 @@
 <script setup lang="ts">
-
-interface Project {
-    id: number,
-    intro: string,
-    title: string,
-    descr: string,
-    stack: string[],
-    link: string,
-}
+import type { Project } from './../types/projects';
 
 const props = defineProps<{
-    item: Project,
+    project: Project,
 }>()
 
+const type = computed(() => props.project.type);
+const title = computed(() => props.project.title);
+const stack = computed(() => props.project.stack.slice(0, 4));
+const smallDescription = computed(() => props.project.smallDescription);
+const link = computed(() => props.project.link);
 </script>
 
 <template>
     <li class="projects__list-item">
-        <p class="intro">{{ item.intro }}</p>
-        <h3 class="title">{{ item.title }}</h3>
-        <p class="subtitle">{{ item.descr }}</p>
+        <p class="intro">{{ type }}</p>
+        <h3 class="title">{{ title }}</h3>
+        <p class="subtitle">{{ smallDescription }}</p>
 
         <ul class="stack__list">
-            <li v-for="i in item.stack" class="stack__list-item">{{ i }}</li>
+            <li v-for="i in stack" class="stack__list-item">{{ i }}</li>
         </ul>
 
-        <NuxtLink :to=item.link class="link">Смотреть проект →</NuxtLink>
+        <a :href=link class="link" target="_blank">Смотреть проект →</a>
     </li>
 </template>
 
@@ -75,6 +72,7 @@ const props = defineProps<{
     transition: all var(--hover-time);
     border-bottom: 1px solid transparent;
     width: fit-content;
+    z-index: 2;
 
     @include hover {
         border-bottom: 1px solid var(--color-accent);
@@ -86,6 +84,7 @@ const props = defineProps<{
 }
 
 .projects__list-item {
+    justify-content: space-between;
     flex-grow: 1;
     border: 1px solid var(--br-color);
     border-radius: var(--br-xl);

@@ -1,7 +1,9 @@
 <script lang="ts" setup>
 
+import type { Project } from './../types/projects';
+import projectsData from './../../public/data/projects.json';
 
-
+const projects = projectsData as Project[];
 </script>
 
 <template>
@@ -15,15 +17,15 @@
                 </h1>
                 <p class="subtitle">Полный список проектов - от Телеграм мини-аппов до корпоративных сайтов</p>
             </div>
-        
+
             <Search></Search>
 
             <div class="cases__example">
-                <Case></Case>
-                <Case></Case>
-                <Case></Case>
-                <Case></Case>
-                <Case></Case>
+                <Case v-for="(project, index) in projects" 
+                :project="project" 
+                :key="project.id" 
+                :index="index + 1">
+            </Case>
             </div>
         </div>
     </section>
@@ -31,7 +33,6 @@
 </template>
 
 <style lang="scss" scoped>
-
 .cases {
     &__header {
         margin-bottom: 140px;

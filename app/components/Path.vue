@@ -1,22 +1,5 @@
 <script setup lang="ts">
-
-const timeline = [
-    {
-        id: 3,
-        year: '2025 - сейчас',
-        title: 'Frontend-разработчик',
-        company: ['Хамелеон', 'гибрид'],
-        descr: 'Отвечаю за весь производственный цикл фронтэнда',
-    },
-    {
-        id: 2,
-        year: '2024 - 2025',
-        title: 'Freelance Frontend-разработчик',
-        company: ['Freelance', 'удаленно'],
-        descr: 'Выполнял верстку, адаптив сайтов. Добавлял им реактивности и HTTP запросы.'
-    }
-]
-
+import timelineData from './../../public/data/timeline.json';
 </script>
 
 <template>
@@ -29,7 +12,7 @@ const timeline = [
                 </div>
 
                 <div class="path__timeline">
-                    <PathTimeLine v-for="item in timeline" :item="item" :key="item.id"></PathTimeLine>
+                    <PathTimeLine v-for="item in timelineData" :item="item" :key="item.id"></PathTimeLine>
                 </div>
             </div>
         </div>

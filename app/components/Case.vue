@@ -1,8 +1,16 @@
 <script lang="ts" setup>
+import type { Project } from './../types/projects';
 
-const stack = ['VUE 3', 'NUXT 4', 'TypeScript', 'Node.js', 'Express.js']
+const props = defineProps<{
+    project: Project,
+    index: number
+}>();
 
-
+const type = computed(() => props.project.type);
+const title = computed(() => props.project.title);
+const stack = computed(() => props.project.stack);
+const smallDescription = computed(() => props.project.smallDescription);
+const link = computed(() => props.project.link);
 </script>
 
 <template>
@@ -10,21 +18,20 @@ const stack = ['VUE 3', 'NUXT 4', 'TypeScript', 'Node.js', 'Express.js']
     <div class="case">
         <div class="case__intro">
             <div class="case__stat">
-                <p class="case__stat-number">01</p>
-                <p class="case__stat-type">realtime</p>
+                <p class="case__stat-number">{{ index }}</p>
+                <p class="case__stat-type">{{ type }}</p>
             </div>
 
             <h2 class="case__title">
-                ArtHouse
+                {{ title }}
             </h2>
         </div>
 
-        <p class="case__descr">Дашборд аналитики в реальном времени: WebSocket-потоки, 40+ виджетов, состояние на Pinia
-            с оптимистичными обновлениями.</p>
+        <p class="case__descr">{{ smallDescription }}</p>
 
         <div class="case__stack">
-            <AboutStackListItem :stack-items="stack"></AboutStackListItem>
-            <a class="case__stack-link" href="/">Смотреть проект</a>
+            <AboutStackListItem class="case__stack-list" :stack-items="stack"></AboutStackListItem>
+            <a class="case__stack-link" target="_blank" :href="link">Смотреть проект</a>
         </div>
     </div>
 
@@ -32,7 +39,6 @@ const stack = ['VUE 3', 'NUXT 4', 'TypeScript', 'Node.js', 'Express.js']
 
 <style lang="scss" scoped>
 .case {
-    // display: flex;
     display: grid;
     background-color: var(--color-bg-elem);
     border-radius: var(--br-xl);
@@ -40,10 +46,10 @@ const stack = ['VUE 3', 'NUXT 4', 'TypeScript', 'Node.js', 'Express.js']
     transition: all var(--hover-time) ease-in-out;
 
     grid-template-columns: repeat(6, 1fr);
-    grid-template-rows: 100px 100px;
+    grid-template-rows: auto 100px;
 
     @include mobile-s {
-        grid-template-rows: 80px;
+        grid-template-rows: auto;
     }
 
 
@@ -86,15 +92,17 @@ const stack = ['VUE 3', 'NUXT 4', 'TypeScript', 'Node.js', 'Express.js']
     &__title {
         font-size: 22px;
         font-weight: 700;
+        margin-bottom: 10px;
     }
 
     &__stat {
         display: flex;
-        gap: 10px;
-        align-items: center;
+        gap: 14px;
+        align-items: flex-start;
 
         &-number {
             font-size: 18px;
+            font-weight: 700;
             color: var(--color-dim);
         }
 
@@ -134,11 +142,13 @@ const stack = ['VUE 3', 'NUXT 4', 'TypeScript', 'Node.js', 'Express.js']
     }
 
     &__stack {
-        padding: 26px 24px;
         position: relative;
 
         grid-row: 1 / 3;
         grid-column: 5 / 7;
+
+        display: grid;
+        grid-template-rows: repeat(3, 1fr);
 
         @include tablet {
             grid-column: 4 / 7;
@@ -147,6 +157,7 @@ const stack = ['VUE 3', 'NUXT 4', 'TypeScript', 'Node.js', 'Express.js']
         @include mobile {
             grid-row: 3 / 4;
             grid-column: 1 / 7;
+            grid-template-rows: none;
             border-top: 2px solid var(--br-color);
 
             :deep(.about__stack__list) {
@@ -154,30 +165,35 @@ const stack = ['VUE 3', 'NUXT 4', 'TypeScript', 'Node.js', 'Express.js']
             }
         }
 
-        &::before {
-            content: '';
-            position: absolute;
-            width: 100%;
-            height: 2px;
-            background-color: var(--br-color);
-            left: 0;
-            bottom: 64px;
+        &-list {
+            padding: 26px 24px;
+            grid-row: 1 / 3;
         }
 
         &-link {
-            display: block;
-            margin-top: 44px;
+            grid-row: 3 / 4;
+            position: relative;
+            margin-top: auto;
             margin-inline: auto;
             font-size: 14px;
             text-align: center;
             transition: all var(--hover-time);
-            border-bottom: 1px solid transparent;
             padding-bottom: 4px;
-            width: fit-content;
+            width: 100%;
+            padding: 26px 24px;
+            
+            &::before {
+                content: '';
+                position: absolute;
+                width: 100%;
+                height: 2px;
+                background-color: var(--br-color);
+                top: 0px;
+                left: 0;
+            }
 
             @include hover {
                 color: var(--color-accent);
-                border-color: var(--color-accent);
             }
         }
     }
