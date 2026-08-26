@@ -4,6 +4,18 @@ import type { Project } from './../types/projects';
 import projectsData from './../../public/data/projects.json';
 
 const projects = projectsData as Project[];
+
+useHead({
+    title: 'Кейсы',
+    link: [
+        {
+            key: 'icon',
+            rel: 'icon',
+            type: 'image/png',
+            href: '/favicon-cases.svg?v=1'
+        }
+    ]
+})
 </script>
 
 <template>
@@ -21,11 +33,8 @@ const projects = projectsData as Project[];
             <Search></Search>
 
             <div class="cases__example">
-                <Case v-for="(project, index) in projects" 
-                :project="project" 
-                :key="project.id" 
-                :index="index + 1">
-            </Case>
+                <Case v-for="(project, index) in projects" :project="project" :key="project.id" :index="index + 1">
+                </Case>
             </div>
         </div>
     </section>

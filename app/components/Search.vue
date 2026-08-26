@@ -2,7 +2,7 @@
 import { ref, watch, computed, onMounted, onUnmounted } from 'vue';
 
 const props = defineProps<{
-    isOpen: boolean;
+    isOpen?: boolean;
 }>();
 
 const emit = defineEmits<{
