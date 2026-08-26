@@ -17,8 +17,8 @@ const menuItems = [
     { label: 'Перейти: Главная', link: '/' },
     { label: 'Перейти: Все проекты', link: '/cases' },
     { label: 'Открыть GitHub', link: 'https://github.com/DenWebSite' },
-    { label: 'Открыть CV', link: 'https://github.com/DenWebSite' },
-    { label: 'Перейти: Обо мне', link: { path: '/', hash: '#aboout' } },
+    { label: 'Открыть CV', link: 'https://drive.google.com/file/d/13Ha6sGnS3g9e0AmN0zsFrhxd9A0A_29H/view?usp=sharing' },
+    { label: 'Перейти: Обо мне', link: { path: '/', hash: '#about' } },
     { label: 'Перейти: Кейсы', link: { path: '/', hash: '#case' } },
     { label: 'Перейти: Опыт', link: { path: '/', hash: '#path' } },
     { label: 'Перейти: Контакты', link: { path: '/', hash: '#form' } },
@@ -111,7 +111,7 @@ onUnmounted(() => {
     z-index: 999;
     position: fixed;
     inset: 0;
-    background: rgba(16, 20, 15, 0.5);
+    background: rgba(16, 20, 15, 0.4);
     backdrop-filter: blur(12px);
 }
 

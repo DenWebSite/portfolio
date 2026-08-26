@@ -9,7 +9,7 @@ const props = defineProps<{
 const type = computed(() => props.project.type);
 const title = computed(() => props.project.title);
 const stack = computed(() => props.project.stack);
-const smallDescription = computed(() => props.project.smallDescription);
+const description = computed(() => props.project.description);
 const link = computed(() => props.project.link);
 </script>
 
@@ -27,7 +27,7 @@ const link = computed(() => props.project.link);
             </h2>
         </div>
 
-        <p class="case__descr">{{ smallDescription }}</p>
+        <p class="case__descr">{{ description }}</p>
 
         <div class="case__stack">
             <AboutStackListItem class="case__stack-list" :stack-items="stack"></AboutStackListItem>

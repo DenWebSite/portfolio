@@ -11,33 +11,16 @@ const isSearchOpen = ref(false);
                 </h2>
 
                 <div class="buttons">
-                    <NuxtLink to="" class="cv">CV</NuxtLink>
+                    <a class="cv"
+                        href="https://drive.google.com/file/d/13Ha6sGnS3g9e0AmN0zsFrhxd9A0A_29H/view?usp=sharing"
+                        target="_blank"><span> Открыть </span> CV</a>
 
                     <button class="search" @click="isSearchOpen = true">
                         <p> Быстрый поиск </p>
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 14 14"
-                            id="Search-Visual--Streamline-Core" height="18" width="18">
-                            <desc>
-                                Search Visual Streamline Icon: https://streamlinehq.com
-                            </desc>
-                            <g id="search-visual">
-                                <path id="Vector" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                                    d="M13.5 10.5v2c0 0.2652 -0.1054 0.5196 -0.2929 0.7071s-0.4419 0.2929 -0.7071 0.2929h-2"
-                                    stroke-width="1"></path>
-                                <path id="Vector_2" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                                    d="M10.5 0.5h2c0.2652 0 0.5196 0.105357 0.7071 0.292893 0.1875 0.187537 0.2929 0.441887 0.2929 0.707107v2"
-                                    stroke-width="1"></path>
-                                <path id="Vector_3" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                                    d="M0.5 3.5v-2c0 -0.26522 0.105357 -0.51957 0.292893 -0.707107C0.98043 0.605357 1.23478 0.5 1.5 0.5h2"
-                                    stroke-width="1"></path>
-                                <path id="Vector_4" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                                    d="M3.5 13.5h-2c-0.26522 0 -0.51957 -0.1054 -0.707107 -0.2929C0.605357 13.0196 0.5 12.7652 0.5 12.5v-2"
-                                    stroke-width="1"></path>
-                                <path id="Ellipse 1174" stroke="currentColor"
-                                    d="M3.25 6.25a3 3 0 1 0 6 0 3 3 0 1 0 -6 0" stroke-width="1"></path>
-                                <path id="Vector 2507" stroke="currentColor" stroke-linecap="round"
-                                    stroke-linejoin="round" d="m8.5 8.5 2 2" stroke-width="1"></path>
-                            </g>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="22px" height="22px" viewBox="0 0 24 24">
+                            <title xmlns="">search-thin</title>
+                            <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                d="m21 21l-4.343-4.343m0 0A8 8 0 1 0 5.343 5.343a8 8 0 0 0 11.314 11.314" />
                         </svg>
                     </button>
                 </div>
@@ -96,8 +79,8 @@ const isSearchOpen = ref(false);
         color: var(--color-light);
     }
 
-    @include mobile-s{
-        p{
+    @include mobile-s {
+        p {
             display: none;
         }
     }
@@ -156,6 +139,12 @@ const isSearchOpen = ref(false);
     border-radius: var(--br-m);
     border: 1px solid var(--br-color);
     corner-shape: squircle;
-    cursor: pointer
+    cursor: pointer;
+
+    @include mobile{
+        span{
+            display: none;
+        }
+    }
 }
 </style>
