@@ -83,9 +83,9 @@ onUnmounted(() => {
         <div class="wrapper" v-if="isOpen" @click.self="closeModal()">
             <div class="search">
                 <div class="search__inner">
-                    <label class="search-label">Введите название раздела</label>
+                    <label class="search__label">Введите название раздела</label>
 
-                    <input type="text" class="search-input" placeholder="Введите название раздела" v-model="searchQuery"
+                    <input type="text" class="search__input" placeholder="Введите название раздела" v-model="searchQuery"
                         autofocus>
 
                     <ul v-if="filteredItems.length > 0" class="search__list">
@@ -95,7 +95,7 @@ onUnmounted(() => {
                         </li>
                     </ul>
 
-                    <div v-else class="search-empty">
+                    <div v-else class="search__empty">
                         Ничего не найдено
                     </div>
                 </div>
@@ -131,14 +131,14 @@ onUnmounted(() => {
     color: var(--color-dim);
 
 
-    &-label {
+    &__label {
         display: block;
         width: 0;
         height: 0;
         visibility: hidden;
     }
 
-    &-input {
+    &__input {
         color: var(--color-dim);
         padding: 10px 4px;
         width: 100%;

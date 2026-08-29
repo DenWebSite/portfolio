@@ -92,7 +92,7 @@ onUnmounted(() => {
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
-        padding: 20px 20px 20px 40px;
+        padding: 20px;
         max-width: 440px;
         width: 100%;
         height: auto;

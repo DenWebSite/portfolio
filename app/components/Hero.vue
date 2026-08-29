@@ -45,7 +45,7 @@
     }
 
     &__info {
-        max-width: 600px;
+        max-width: 510px;
         display: flex;
         flex-direction: column;
         justify-content: start;
