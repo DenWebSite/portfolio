@@ -2,7 +2,7 @@
 
 const coreItems = ['VUE 3', 'NUXT 4', 'TypeScript', 'Node.js', 'Express.js']
 const toolsItems = ['Vite', 'PostgreSQL', 'GIT', 'Pinia', 'SASS/SCSS', 'ООП', 'Паттерны']
-const qualityItems = ['Vitest', 'ESLint']
+const practiceItems = ['ООП', 'SOLID', 'DRY', 'KISS', 'Паттерны', 'Алгоритмы', 'Структуры данных']
 
 </script>
 
@@ -26,7 +26,7 @@ const qualityItems = ['Vitest', 'ESLint']
 
                     <AboutStackListItem title="Core" :stack-items="coreItems"></AboutStackListItem>
                     <AboutStackListItem title="Инструменты" :stack-items="toolsItems"></AboutStackListItem>
-                    <AboutStackListItem title="Качество" :stack-items="qualityItems"></AboutStackListItem>
+                    <AboutStackListItem title="Практики" :stack-items="practiceItems"></AboutStackListItem>
                 </div>
             </div>
         </div>

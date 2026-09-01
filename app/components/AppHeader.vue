@@ -13,7 +13,7 @@ const isSearchOpen = ref(false);
                 <div class="buttons">
                     <a class="cv"
                         href="https://drive.google.com/file/d/13Ha6sGnS3g9e0AmN0zsFrhxd9A0A_29H/view?usp=sharing"
-                        target="_blank"><span> Открыть </span> CV</a>
+                        target="_blank">Резюме</a>
 
                     <button class="search" @click="isSearchOpen = true">
                         <p> Быстрый поиск </p>
@@ -140,11 +140,5 @@ const isSearchOpen = ref(false);
     border: 1px solid var(--br-color);
     corner-shape: squircle;
     cursor: pointer;
-
-    @include mobile{
-        span{
-            display: none;
-        }
-    }
 }
 </style>
