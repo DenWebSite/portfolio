@@ -1,5 +1,7 @@
 <script setup lang="ts">
 const isSearchOpen = ref(false);
+
+const cvLink: string = 'https://drive.google.com/file/d/1MTh-3sAMeCzzCvSdrFCi_STyxzBc9IdJ/view'
 </script>
 
 <template>
@@ -11,9 +13,7 @@ const isSearchOpen = ref(false);
                 </h2>
 
                 <div class="buttons">
-                    <a class="cv"
-                        href="https://drive.google.com/file/d/13Ha6sGnS3g9e0AmN0zsFrhxd9A0A_29H/view?usp=sharing"
-                        target="_blank">Резюме</a>
+                    <a class="cv" :href="cvLink" target="_blank">Резюме</a>
 
                     <button class="search" @click="isSearchOpen = true">
                         <p> Быстрый поиск </p>

@@ -17,7 +17,7 @@ const menuItems = [
     { label: 'Перейти: Главная', link: '/' },
     { label: 'Перейти: Все проекты', link: '/cases' },
     { label: 'Открыть GitHub', link: 'https://github.com/DenWebSite' },
-    { label: 'Открыть Резюме', link: 'https://drive.google.com/file/d/13Ha6sGnS3g9e0AmN0zsFrhxd9A0A_29H/view?usp=sharing' },
+    { label: 'Открыть Резюме', link: 'https://drive.google.com/file/d/1MTh-3sAMeCzzCvSdrFCi_STyxzBc9IdJ/view?usp=sharing' },
     { label: 'Перейти: Обо мне', link: { path: '/', hash: '#about' } },
     { label: 'Перейти: Кейсы', link: { path: '/', hash: '#case' } },
     { label: 'Перейти: Опыт', link: { path: '/', hash: '#path' } },
